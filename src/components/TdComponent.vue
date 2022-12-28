@@ -17,7 +17,6 @@
     },
     methods: {
       tdClick() {
-        console.log('count :>> ', count);
         const tictacto = this.$root.$children[0].$children[0];
         if(tictacto.result === true) {
           return;
@@ -29,15 +28,13 @@
           if(this.winner(tictacto.tableData, tictacto.turn)) {
             tictacto.systemMsg = tictacto.turn + "님이 승리 하였습니다!";
             tictacto.result = true;
-            // tictacto.tableData = [['','',''],['','',''],['','','']];
-            // tictacto.turn = "O";
+            count = 0;
           }else {
             // tictacto.turn = tictacto.turn === "O" ? "X" : "O";
             if(count === 9) {
               tictacto.systemMsg = "무승부 입니다.";
               tictacto.result = true;
-              // tictacto.tableData = [['','',''],['','',''],['','','']];
-              // tictacto.turn = "O";
+              count = 0;
             }
           }
           tictacto.turn = tictacto.turn === "O" ? "X" : "O";
@@ -49,16 +46,12 @@
       winner(tableData, turn) {
         let win = false;
         if(tableData[this.rowIndex][0] === turn && tableData[this.rowIndex][1] === turn && tableData[this.rowIndex][2] === turn) {
-          console.log('1 :>> ', 1);
           win = true;
         }else if(tableData[0][this.cellIndex] === turn && tableData[1][this.cellIndex] === turn && tableData[2][this.cellIndex] === turn) {
-          console.log('2 :>> ', 2);
           win = true;
         }else if(tableData[0][0] === turn && tableData[1][1] === turn && tableData[2][2] === turn) {
-          console.log('3 :>> ', 3);
           win = true;
-        }else if(tableData[2][2] === turn && tableData[1][1] === turn && tableData[2][0] === turn) {
-          console.log('4 :>> ', 4);
+        }else if(tableData[0][2] === turn && tableData[1][1] === turn && tableData[2][0] === turn) {
           win = true;
         }
         return win;

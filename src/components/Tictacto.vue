@@ -33,7 +33,6 @@ export default {
   },
   methods: {
     reply() {
-      console.log("재시작");
       this.tableData = [['','',''],['','',''],['','','']];
       this.turn = "O";
       this.result = false;

@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <p>/ 승리조건 수정</p>
     <router-view/>
   </div>
 </template>
