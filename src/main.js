@@ -2,7 +2,9 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router'
+import router from './router/router'
+import HelloWorld from '@/components/HelloWorld'
+import Tictacto from '@/components/Tictacto'
 
 Vue.config.productionTip = false
 
@@ -13,3 +15,18 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+
+// new Vue({
+//   el: '#helloWorld',
+//   router,
+//   components: { HelloWorld },
+//   template: '<HelloWorld/>'
+// })
+
+// new Vue({
+//   el: '#tictacto',
+//   router,
+//   components: { Tictacto },
+//   template: '<Tictacto/>'
+// })
