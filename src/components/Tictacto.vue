@@ -1,6 +1,7 @@
 <template>
   <div >
     <div id="tictacto">
+      <p>version 1.0.3</p>
       <table-component :table-data = "tableData"></table-component>
     </div>
     <div>

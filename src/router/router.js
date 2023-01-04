@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Tictacto from '@/components/Tictacto'
+import MineSweeper from '@/components/MineSweeper'
 
 
 Vue.use(Router)
@@ -14,9 +15,14 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/tictacto',
-      name: 'Tictacto',
+      path: '/tictactoe',
+      name: 'Tictactoe',
       component: Tictacto
+    },
+    {
+      path: '/minesweeper',
+      name: 'minesweeper',
+      component: MineSweeper
     },
   ]
 })
