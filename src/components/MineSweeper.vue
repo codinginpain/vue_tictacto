@@ -204,6 +204,14 @@ export default{
       this.playing = false;
       clearInterval(this.timerObj.timer);
       this.timerObj.endTime = new Date();
+      for(let i=0; i<this.rowsCount; i ++) {
+        for(let j=0; j<this.colsCount; j ++) {
+          if(this.tableData[i][j].state === state.close && this.tableData[i][j].realData === value.mine) {
+            this.tableData[i][j].displayData = value.flag;
+            this.tableData[i][j].state = state.open;
+          }
+        }
+      }
     },
     init() {
       this.tableData = [];
